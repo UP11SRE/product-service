@@ -18,7 +18,7 @@ async function handleMessage(content) {
     const { action, data } = content;
     
     switch (action) {
-      case 'productQuantityUpdate':
+      case 'productStatus':
         await productService.productQuantityUpdate(data);
         break;
       case 'orderCancelation':
