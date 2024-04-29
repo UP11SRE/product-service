@@ -15,9 +15,14 @@ module.exports = {
   },
 
   async productQuantityUpdate(data){
-    const response = await updateProduct(data.productId, {quantity : data.quantity});
-    console.log("---",response);
+    const response = await productRepository.productQuantityUpdate(data.productId, data.quantity);
+    console.log(response);
 
+  },
+
+  async orderCancelation(data){
+    const response = await productRepository.orderCancelation(data.productId, data.amount);
+    console.log(response);
   },
 
   async updateProduct(productId, updateFields) {

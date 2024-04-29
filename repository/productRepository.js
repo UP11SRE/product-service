@@ -13,6 +13,33 @@ module.exports = {
     return await product.create({ name, brand, description, category, price, quantity, imageUrl: imageLink });
   },
 
+  async productQuantityUpdate(productId, quantity) {
+    const details =  await product.findByPk(productId);
+
+    const prevQuant = details.quantity;
+
+    details.quantity = prev - quantity;
+
+    await details.save();
+
+    return;
+  },
+
+
+  async orderCancelation(productId, amount) {
+    const details =  await product.findByPk(productId);
+
+    const prevQuant = details.price;
+
+    const newQaunt = amount / prevQuant;
+
+    details.quantity = newQaunt;
+
+    await details.save();
+
+    return;
+  },
+
   async updateProduct(productId, updateFields) {
     try {
         const details = await product.findByPk(productId);

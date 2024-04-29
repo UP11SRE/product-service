@@ -21,6 +21,9 @@ async function handleMessage(content) {
       case 'productQuantityUpdate':
         await productService.productQuantityUpdate(data);
         break;
+      case 'orderCancelation':
+        await productService.orderCancelation(data);
+        break;
       default:
         console.error(`Unknown action: ${action}`);
     }
